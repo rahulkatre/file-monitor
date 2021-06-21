@@ -1,0 +1,33 @@
+Exception while resolving variable 'current_name' in template 'file_name.html'.
+Traceback (most recent call last):
+  File "/Users/rahulkatre/.pyenv/versions/file_monitor/lib/python3.7/site-packages/django/template/base.py", line 829, in _resolve_lookup
+    current = current[bit]
+  File "/Users/rahulkatre/.pyenv/versions/file_monitor/lib/python3.7/site-packages/django/template/context.py", line 83, in __getitem__
+    raise KeyError(key)
+KeyError: 'current_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rahulkatre/.pyenv/versions/file_monitor/lib/python3.7/site-packages/django/template/base.py", line 835, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'current_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rahulkatre/.pyenv/versions/file_monitor/lib/python3.7/site-packages/django/template/base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'current_name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/rahulkatre/.pyenv/versions/file_monitor/lib/python3.7/site-packages/django/template/base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [current_name] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x10744fb70>>, 'request': <WSGIRequest: GET '/file/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x10750b6a8>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x10750ca20>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x10749e080>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}]
+"GET /file/ HTTP/1.1" 200 193
+"POST /file/ HTTP/1.1" 200 23
+File /Users/rahulkatre/project/file_monitor/file_monitor/settings.py previous mtime: 1624301950.2508228, current mtime: 1624302155.975821
+/Users/rahulkatre/project/file_monitor/file_monitor/settings.py notified as changed. Signal results: [(<function template_changed at 0x1024e2730>, None), (<function translation_file_changed at 0x106bee2f0>, None)].
+/Users/rahulkatre/project/file_monitor/file_monitor/settings.py changed, reloading.
